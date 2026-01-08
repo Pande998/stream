@@ -1,33 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<title>SkyView Online Cinema</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <style>
 body {
   margin: 0;
   background: black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
 }
-
-video {
+iframe {
   width: 100%;
-  max-width: 900px;
+  height: 100vh;
+  border: none;
 }
 </style>
 </head>
-
 <body>
 
-<video controls autoplay controlsList="nodownload" oncontextmenu="return false">
-  <source src="https://drive.google.com/uc?export=download&id=1CUA-VdeGWS68ccQOQLNMBMZXhsH0LEi9" type="video/mp4">
-  Your browser does not support video playback.
-</video>
+<iframe
+  src="https://drive.google.com/file/d/1CUA-VdeGWS68ccQOQLNMBMZXhsH0LEi9/preview"
+  allow="autoplay"
+  allowfullscreen>
+</iframe>
 
 </body>
 </html>
