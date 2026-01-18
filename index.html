@@ -1,26 +1,120 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SKYVIEW ONLINE CINEMA</title>
+
 <style>
-body {
-  margin: 0;
-  background: black;
-}
-iframe {
-  width: 100%;
-  height: 100vh;
-  border: none;
-}
+  body {
+    margin: 0;
+    padding: 0;
+    background: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+  }
+
+  .box {
+    background: #121212;
+    padding: 30px 20px;
+    border-radius: 12px;
+    max-width: 420px;
+    width: 90%;
+    box-shadow: 0 0 20px rgba(0,0,0,0.6);
+  }
+
+  h1 {
+    color: #ff9800;
+    font-size: 22px;
+    margin-bottom: 15px;
+  }
+
+  p {
+    font-size: 15px;
+    margin: 10px 0;
+  }
+
+  button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .copy-btn {
+    background: #28a745;
+    color: #fff;
+  }
+
+  .copy-btn:hover {
+    background: #218838;
+  }
+
+  .download-btn {
+    background: #007bff;
+    color: #fff;
+  }
+
+  .download-btn:hover {
+    background: #0069d9;
+  }
+
+  .copied {
+    color: #00e676;
+    margin-top: 10px;
+    display: none;
+    font-size: 14px;
+  }
 </style>
 </head>
+
 <body>
 
-<iframe
-  src="https://drive.google.com/file/d/1CUA-VdeGWS68ccQOQLNMBMZXhsH0LEi9/preview"
-  allow="autoplay"
-  allowfullscreen>
-</iframe>
+<div class="box">
+  <h1>WELCOME TO SKYVIEW ONLINE CINEMA</h1>
+
+  <p><strong>Streaming link copied automatically</strong></p>
+
+  <button class="copy-btn" onclick="copyLink()">Copy Streaming Link</button>
+
+  <div class="copied" id="copiedMsg">Link copied!</div>
+
+  <p style="margin-top:20px;">Open your app and paste the link to start watching</p>
+
+  <p>Don’t have the app?</p>
+
+  <a href="https://drive.google.com/file/d/1Zi8S1eQ7PMzURSLfz9DcSyo9IXpfPiJ7/view" target="_blank">
+    <button class="download-btn">Download App</button>
+  </a>
+</div>
+
+<script>
+  const streamLink = "https://streamtape.com/v/VORyZqVGzVTK2o2/My-Super-Ex-Girlfriend_720p.mp4";
+
+  window.onload = () => {
+    copyLink(true);
+  };
+
+  function copyLink(auto = false) {
+    navigator.clipboard.writeText(streamLink).then(() => {
+      const msg = document.getElementById("copiedMsg");
+      msg.textContent = auto
+        ? "Link copied automatically!"
+        : "Link copied successfully!";
+      msg.style.display = "block";
+      setTimeout(() => msg.style.display = "none", 2500);
+    });
+  }
+</script>
 
 </body>
 </html>
