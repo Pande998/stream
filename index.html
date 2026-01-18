@@ -43,6 +43,11 @@
     padding: 15px;
     margin-bottom: 12px;
     box-shadow: 0 0 10px rgba(0,0,0,0.6);
+    transition: transform 0.2s ease;
+  }
+
+  .movie:hover {
+    transform: translateY(-3px);
   }
 
   .movie h2 {
@@ -60,16 +65,21 @@
     margin-top: 10px;
     width: 100%;
     padding: 10px;
-    background: #007bff;
+    background: linear-gradient(90deg, #007bff, #00d4ff);
     border: none;
     border-radius: 6px;
     color: #fff;
     font-size: 15px;
     cursor: pointer;
+    transition: background 0.3s, transform 0.1s;
+  }
+
+  .copy-btn:hover {
+    background: linear-gradient(90deg, #00d4ff, #007bff);
   }
 
   .copy-btn:active {
-    background: #0056b3;
+    transform: scale(0.97);
   }
 
   .copied {
@@ -79,13 +89,26 @@
     display: none;
   }
 
-  .app-box {
-    background: #0f1720;
-    border: 1px solid #007bff;
+  .app-box, .whatsapp-box {
     border-radius: 10px;
     padding: 15px;
     margin-top: 20px;
     text-align: center;
+    transition: transform 0.2s ease;
+  }
+
+  .app-box {
+    background: #0f1720;
+    border: 1px solid #007bff;
+  }
+
+  .whatsapp-box {
+    background: #0b1f14;
+    border: 1px solid #1db954;
+  }
+
+  .app-box:hover, .whatsapp-box:hover {
+    transform: translateY(-3px);
   }
 
   .app-box h3 {
@@ -94,15 +117,40 @@
     font-size: 18px;
   }
 
-  .app-btn {
+  .whatsapp-box h3 {
+    margin: 0 0 8px;
+    color: #1db954;
+    font-size: 18px;
+  }
+
+  .app-btn, .whatsapp-btn {
     display: inline-block;
     padding: 12px 18px;
-    background: #007bff;
-    color: #fff;
     font-weight: bold;
     text-decoration: none;
     border-radius: 6px;
     font-size: 15px;
+    transition: background 0.3s, transform 0.1s;
+  }
+
+  .app-btn {
+    background: linear-gradient(90deg, #007bff, #00d4ff);
+    color: #fff;
+  }
+
+  .app-btn:hover {
+    background: linear-gradient(90deg, #00d4ff, #007bff);
+    transform: scale(1.05);
+  }
+
+  .whatsapp-btn {
+    background: linear-gradient(90deg, #1db954, #00ff7f);
+    color: #000;
+  }
+
+  .whatsapp-btn:hover {
+    background: linear-gradient(90deg, #00ff7f, #1db954);
+    transform: scale(1.05);
   }
 
   .instructions {
@@ -110,32 +158,6 @@
     font-size: 14px;
     color: #ccc;
     line-height: 1.5;
-  }
-
-  .whatsapp-box {
-    background: #0b1f14;
-    border: 1px solid #1db954;
-    border-radius: 10px;
-    padding: 15px;
-    margin-top: 20px;
-    text-align: center;
-  }
-
-  .whatsapp-box h3 {
-    margin: 0 0 8px;
-    color: #1db954;
-    font-size: 18px;
-  }
-
-  .whatsapp-btn {
-    display: inline-block;
-    padding: 12px 18px;
-    background: #1db954;
-    color: #000;
-    font-weight: bold;
-    text-decoration: none;
-    border-radius: 6px;
-    font-size: 15px;
   }
 
   footer {
@@ -155,6 +177,16 @@
 </header>
 
 <div class="container">
+
+  <!-- Warm Bodies -->
+  <div class="movie">
+    <h2>Warm Bodies</h2>
+    <span>Romance • Comedy • Zombie</span>
+    <button class="copy-btn" onclick="copyLink('https://streamtape.com/v/jYYD9Ly8xxIzRRy/Warm-Bodies_1080p.mp4', this)">
+      COPY LINK
+    </button>
+    <div class="copied">Link copied!</div>
+  </div>
 
   <!-- Trap -->
   <div class="movie">
