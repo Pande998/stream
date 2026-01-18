@@ -79,6 +79,65 @@
     display: none;
   }
 
+  .app-box {
+    background: #0f1720;
+    border: 1px solid #007bff;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .app-box h3 {
+    margin: 0 0 10px;
+    color: #4da3ff;
+    font-size: 18px;
+  }
+
+  .app-btn {
+    display: inline-block;
+    padding: 12px 18px;
+    background: #007bff;
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 15px;
+  }
+
+  .instructions {
+    margin-top: 12px;
+    font-size: 14px;
+    color: #ccc;
+    line-height: 1.5;
+  }
+
+  .whatsapp-box {
+    background: #0b1f14;
+    border: 1px solid #1db954;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .whatsapp-box h3 {
+    margin: 0 0 8px;
+    color: #1db954;
+    font-size: 18px;
+  }
+
+  .whatsapp-btn {
+    display: inline-block;
+    padding: 12px 18px;
+    background: #1db954;
+    color: #000;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 15px;
+  }
+
   footer {
     text-align: center;
     padding: 15px;
@@ -92,37 +151,64 @@
 
 <header>
   <h1>🎬 SKYVIEW ONLINE CINEMA</h1>
-  <p>LONG PRESS COPY • PASTE IN DOWNLOADER APP</p>
+  <p>LONG PRESS COPY • PASTE IN STREAM APP</p>
 </header>
 
 <div class="container">
 
-  <!-- MOVIE ITEM -->
+  <!-- Trap -->
   <div class="movie">
-    <h2>57 Seconds (2023)</h2>
+    <h2>Trap</h2>
+    <span>Thriller</span>
+    <button class="copy-btn" onclick="copyLink('https://streamtape.com/v/dgR6Qj2JejFgMW/Trap_720p.mp4', this)">
+      COPY LINK
+    </button>
+    <div class="copied">Link copied!</div>
+  </div>
+
+  <!-- My Super Ex-Girlfriend -->
+  <div class="movie">
+    <h2>My Super Ex-Girlfriend</h2>
+    <span>Comedy • Romance • Action</span>
+    <button class="copy-btn" onclick="copyLink('https://streamtape.com/v/VORyZqVGzVTK2o2/My-Super-Ex-Girlfriend_720p.mp4', this)">
+      COPY LINK
+    </button>
+    <div class="copied">Link copied!</div>
+  </div>
+
+  <!-- 57 Seconds -->
+  <div class="movie">
+    <h2>57 Seconds</h2>
     <span>Action • Sci-Fi</span>
-    <button class="copy-btn" onclick="copyLink('https://streamtape.com/v/XXXX/movie.mp4', this)">
+    <button class="copy-btn" onclick="copyLink('https://streamtape.com/v/pbddMwXjo3UGd1/57-Seconds_720p.mp4', this)">
       COPY LINK
     </button>
     <div class="copied">Link copied!</div>
   </div>
 
-  <div class="movie">
-    <h2>John Wick: Chapter 4</h2>
-    <span>Action • Thriller</span>
-    <button class="copy-btn" onclick="copyLink('https://streamtape.com/v/YYYY/movie.mp4', this)">
-      COPY LINK
-    </button>
-    <div class="copied">Link copied!</div>
+  <!-- Stream App Download -->
+  <div class="app-box">
+    <h3>📥 Stream App</h3>
+    <a class="app-btn"
+       href="https://drive.google.com/file/d/1Zi8S1eQ7PMzURSLfz9DcSyo9IXpfPiJ7/view?usp=sharing"
+       target="_blank">
+       Click to Download Stream App
+    </a>
+    <div class="instructions">
+      👉 Copy movie link above<br>
+      👉 Paste it in the Stream App<br>
+      👉 Start streaming or downloading
+    </div>
   </div>
 
-  <div class="movie">
-    <h2>Fast X</h2>
-    <span>Action</span>
-    <button class="copy-btn" onclick="copyLink('https://streamtape.com/v/ZZZZ/movie.mp4', this)">
-      COPY LINK
-    </button>
-    <div class="copied">Link copied!</div>
+  <!-- WhatsApp Requests -->
+  <div class="whatsapp-box">
+    <h3>📩 Movie Requests</h3>
+    <a class="whatsapp-btn"
+       href="https://wa.me/256705840278"
+       target="_blank">
+       WhatsApp 0705840278
+    </a>
   </div>
 
 </div>
