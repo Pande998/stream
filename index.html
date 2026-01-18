@@ -3,115 +3,140 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SKYVIEW ONLINE CINEMA</title>
+<title>SKYVIEW ONLINE CINEMA – Movie Links</title>
 
 <style>
   body {
     margin: 0;
-    padding: 0;
     background: #000;
     color: #fff;
     font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+  }
+
+  header {
+    padding: 15px;
+    background: #111;
     text-align: center;
+    border-bottom: 1px solid #222;
   }
 
-  .box {
-    background: #121212;
-    padding: 30px 20px;
-    border-radius: 12px;
-    max-width: 420px;
-    width: 90%;
-    box-shadow: 0 0 20px rgba(0,0,0,0.6);
-  }
-
-  h1 {
+  header h1 {
+    margin: 0;
     color: #ff9800;
     font-size: 22px;
-    margin-bottom: 15px;
   }
 
-  p {
-    font-size: 15px;
-    margin: 10px 0;
+  header p {
+    font-size: 13px;
+    color: #ccc;
   }
 
-  button {
-    width: 100%;
-    padding: 12px;
-    margin-top: 15px;
-    font-size: 16px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: 0.3s;
+  .container {
+    padding: 15px;
+    max-width: 600px;
+    margin: auto;
+  }
+
+  .movie {
+    background: #121212;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.6);
+  }
+
+  .movie h2 {
+    margin: 0 0 8px;
+    font-size: 17px;
+    color: #00e676;
+  }
+
+  .movie span {
+    font-size: 13px;
+    color: #aaa;
   }
 
   .copy-btn {
-    background: #28a745;
-    color: #fff;
-  }
-
-  .copy-btn:hover {
-    background: #218838;
-  }
-
-  .download-btn {
+    margin-top: 10px;
+    width: 100%;
+    padding: 10px;
     background: #007bff;
+    border: none;
+    border-radius: 6px;
     color: #fff;
+    font-size: 15px;
+    cursor: pointer;
   }
 
-  .download-btn:hover {
-    background: #0069d9;
+  .copy-btn:active {
+    background: #0056b3;
   }
 
   .copied {
+    font-size: 12px;
     color: #00e676;
-    margin-top: 10px;
+    margin-top: 6px;
     display: none;
-    font-size: 14px;
+  }
+
+  footer {
+    text-align: center;
+    padding: 15px;
+    font-size: 12px;
+    color: #777;
   }
 </style>
 </head>
 
 <body>
 
-<div class="box">
-  <h1>WELCOME TO SKYVIEW ONLINE CINEMA</h1>
+<header>
+  <h1>🎬 SKYVIEW ONLINE CINEMA</h1>
+  <p>LONG PRESS COPY • PASTE IN DOWNLOADER APP</p>
+</header>
 
-  <p><strong>Streaming link copied automatically</strong></p>
+<div class="container">
 
-  <button class="copy-btn" onclick="copyLink()">Copy Streaming Link</button>
+  <!-- MOVIE ITEM -->
+  <div class="movie">
+    <h2>57 Seconds (2023)</h2>
+    <span>Action • Sci-Fi</span>
+    <button class="copy-btn" onclick="copyLink('https://streamtape.com/v/XXXX/movie.mp4', this)">
+      COPY LINK
+    </button>
+    <div class="copied">Link copied!</div>
+  </div>
 
-  <div class="copied" id="copiedMsg">Link copied!</div>
+  <div class="movie">
+    <h2>John Wick: Chapter 4</h2>
+    <span>Action • Thriller</span>
+    <button class="copy-btn" onclick="copyLink('https://streamtape.com/v/YYYY/movie.mp4', this)">
+      COPY LINK
+    </button>
+    <div class="copied">Link copied!</div>
+  </div>
 
-  <p style="margin-top:20px;">Open your app and paste the link to start watching</p>
+  <div class="movie">
+    <h2>Fast X</h2>
+    <span>Action</span>
+    <button class="copy-btn" onclick="copyLink('https://streamtape.com/v/ZZZZ/movie.mp4', this)">
+      COPY LINK
+    </button>
+    <div class="copied">Link copied!</div>
+  </div>
 
-  <p>Don’t have the app?</p>
-
-  <a href="https://drive.google.com/file/d/1Zi8S1eQ7PMzURSLfz9DcSyo9IXpfPiJ7/view" target="_blank">
-    <button class="download-btn">Download App</button>
-  </a>
 </div>
 
+<footer>
+  © SKYVIEW CINEMA • COPY ONLY • NO STREAMING HERE
+</footer>
+
 <script>
-  const streamLink = "https://streamtape.com/v/VORyZqVGzVTK2o2/My-Super-Ex-Girlfriend_720p.mp4";
-
-  window.onload = () => {
-    copyLink(true);
-  };
-
-  function copyLink(auto = false) {
-    navigator.clipboard.writeText(streamLink).then(() => {
-      const msg = document.getElementById("copiedMsg");
-      msg.textContent = auto
-        ? "Link copied automatically!"
-        : "Link copied successfully!";
+  function copyLink(link, btn) {
+    navigator.clipboard.writeText(link).then(() => {
+      const msg = btn.nextElementSibling;
       msg.style.display = "block";
-      setTimeout(() => msg.style.display = "none", 2500);
+      setTimeout(() => msg.style.display = "none", 2000);
     });
   }
 </script>
